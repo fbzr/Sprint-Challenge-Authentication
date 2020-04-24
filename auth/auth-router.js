@@ -15,7 +15,7 @@ router.use((req, res, next) => {
   next();
 }); 
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const user = await Users.findBy({ username });
@@ -51,7 +51,7 @@ router.post('/register', (req, res) => {
   }
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res, next) => {
   try {
     const { username, password } = req.body;
     
