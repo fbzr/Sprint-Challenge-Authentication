@@ -34,7 +34,7 @@ const Jokes = () => {
         <Container className={classes.root}>
             <Grid justify='flex-start' container>
                 { jokes.map(joke => (
-                    <Joke id={joke.id} />
+                    <Joke id={joke.id} joke={joke.joke} />
                 )) }
             </Grid>
         </Container>

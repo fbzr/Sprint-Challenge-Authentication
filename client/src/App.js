@@ -33,6 +33,7 @@ function App() {
           <Register handleLogin={handleLogin} />
         </Route>
         <ProtectedRoute exact path='/jokes' component={Jokes} />
+        <Redirect from='*' to='/jokes' />
       </Switch>
     </>
   );
