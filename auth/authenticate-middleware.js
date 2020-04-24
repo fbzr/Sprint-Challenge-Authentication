@@ -12,14 +12,14 @@ module.exports = (req, res, next) => {
 
   // Verify token
   try {
-      const secret = process.env.JWT_SECRET || 'process.env.JWT_SECRET';
+      const secret = process.env.JWT_SECRET || 'pgj56sf0kwp2rign8mv8p4o';
       jwt.verify(token, secret, (error, decoded) => {
-      if (error) {
-          res.status(401).json({ errorMessage: 'Token is not valid' });
-      } else {
-          req.userId = decoded.user.id;
-          next();
-      }
+        if (error) {
+            res.status(401).json({ errorMessage: 'Token is not valid' });
+        } else {
+            req.userId = decoded.user.id;
+            next();
+        }
       });
   } catch (err) {
       next(err);
